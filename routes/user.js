@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const router = express.Router();
 
+//create
 router.post("/signup", async (req, res) => {
   const testEmail = await User.findOne({ email: req.body.email });
   if (testEmail) {
